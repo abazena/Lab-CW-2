@@ -1,4 +1,7 @@
 var _DATA = null;
+$('#sidebarCollapse').on('click', function () {
+    $('#sidebar').toggleClass('active');
+});
 const dashboard = 
 {
     init: function()
