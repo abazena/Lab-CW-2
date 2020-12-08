@@ -32,7 +32,6 @@ const main =
                 else {
                     json[header[j]] = Number(elements[j])
                 }
-
             }
             data.push(json)
         });
