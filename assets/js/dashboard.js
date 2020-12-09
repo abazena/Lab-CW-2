@@ -93,7 +93,7 @@ const dashboard = {
 
         chartThree = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "Mean child mortality Against mean fertility in America over time",
+            "title": "Mean Fertility Against mean Population in South Asia over time",
             "width": 450,
             "height": 250,
             "data": {
@@ -131,7 +131,7 @@ const dashboard = {
 
         chartFour = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "Mean child mortality Against mean fertility in America over time",
+            "title": "Mean Life Expectancy Against mean Population in South Asia over time",
             "width": 450,
             "height": 250,
             "data": {
