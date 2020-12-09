@@ -48,7 +48,7 @@ const main =
         $( "#loading-text" ).append( '<br />');//
         $( "#loading-text" ).append( '<br />');//
         $( "#loading-text" ).append( '<a href="./dashboard.html" class="btn btn-outline-dark"> redirect to dashboard</a>');//
-        setTimeout(main.redirect, 5000); //delays next call for 30 seconds
+        setTimeout(main.redirect, 8000);
     },
     get_data: function () {
         if (data_loaded) {

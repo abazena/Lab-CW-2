@@ -1,3 +1,5 @@
+let cr = ["green", "green", "green","green", "green", "green","green", "green", "green","green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green","green" , "green","green", "green", "green","green", "green", "green","green", "green", "green","green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green","red" , "green"]
+
 var _DATA = null;
 $('#sidebarCollapse').on('click', function() {
     $('#sidebar').toggleClass('active');
@@ -219,39 +221,49 @@ const dashboard = {
             "width": 500,
             "height": 450,
             "data": {
-                "url": "https://raw.githubusercontent.com/abazena/Lab-CW-2/main/data/gapminder.csv",
-                "format": { "type": "dsv", "delimiter": ";" }
+              "url": "https://raw.githubusercontent.com/abazena/Lab-CW-2/main/data/gapminder.csv",
+              "format": {"type": "dsv", "delimiter": ";"}
             },
-            "encoding": { "x": { "field": "Year", "timeUnit": "year", "type": "ordinal" } },
-            "layer": [{
-                    "mark": { "color": "#176434", "type": "bar", "cornerRadiusEnd": 4 },
-                    "encoding": {
-                        "y": {
-                            "field": "child_mortality",
-                            "aggregate": "mean",
-                            "type": "quantitative",
-                            "scale": { "domain": [0, 120] },
-                            "title": "Mean of Child Mortality (Green)"
-                        }
-                    }
-                },
-                {
-                    "mark": { "stroke": "#ecc616", "type": "line" },
-                    "encoding": {
-                        "y": {
-                            "field": "fertility",
-                            "aggregate": "mean",
-                            "type": "quantitative",
-                            "scale": { "domain": [0, 6] },
-                            "axis": { "titleColor": "#000000" },
-                            "title": "Mean of Fertility (Yellow)"
-                        }
-                    }
+            "encoding": {
+                "x": {"field": "Year", "timeUnit": "year", "type": "ordinal"}
+            },
+            "layer": [
+              {
+                "mark": {"color": "#176434", "type": "bar", "cornerRadiusEnd": 4},
+                "encoding": {
+                  "y": {
+                    "field": "child_mortality",
+                    "aggregate": "mean",
+                    "type": "quantitative",
+                    "scale": {"domain": [0, 120]},
+                    "title": "Mean of Child Mortality (Green)"
+                  },
+                  "color": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "legend":null,
+                    "scale": {"range": cr}
+                  }, 
+                "legend": null
                 }
+              },
+              {
+                "mark": {"stroke": "#ecc616", "type": "line"},
+                "encoding": {
+                  "y": {
+                    "field": "fertility",
+                    "aggregate": "mean",
+                    "type": "quantitative",
+                    "scale": {"domain": [0, 6]},
+                    "axis": {"titleColor": "#000000"},
+                    "title": "Mean of Fertility (Yellow)"
+                  }
+                }
+              }
             ],
-            "transform": [{ "filter": { "field": "region", "equal": "America" } }],
-            "resolve": { "scale": { "y": "independent" } }
-        }
+            "transform": [{"filter": {"field": "region", "equal": "America"}}],
+            "resolve": {"scale": {"y": "independent"}}
+          }
         vegaEmbed('#chart1', chartOne);
 
 
