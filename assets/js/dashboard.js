@@ -173,6 +173,90 @@ const dashboard = {
             "resolve": { "scale": { "y": "independent" } }
         }
         vegaEmbed('#chart4', chartFour);
+
+        chartFive = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+            "width": 500,
+            "height": 450,
+            "title": "Mean child mortality Against mean fertility over time",
+            "data": {
+                "url": "https://raw.githubusercontent.com/abazena/Lab-CW-2/main/data/gapminder.csv",
+                "format": { "type": "dsv", "delimiter": ";" }
+            },
+            "encoding": { "x": { "field": "Year", "timeUnit": "year", "type": "ordinal" } },
+            "layer": [{
+                    "mark": { "color": "#d33636", "type": "line", "cornerRadiusEnd": 4 },
+                    "encoding": {
+                        "y": {
+                            "field": "fertility",
+                            "aggregate": "mean",
+                            "type": "quantitative",
+                            "title": "Mean of Child Mortality (Red)"
+                        }
+                    }
+                },
+                {
+                    "mark": { "stroke": "#176434", "type": "line" },
+                    "encoding": {
+                        "y": {
+                            "field": "gdp",
+                            "aggregate": "mean",
+                            "type": "quantitative",
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Fertility (Green)"
+                        }
+                    }
+                }
+            ],
+            "resolve": { "scale": { "y": "independent" } }
+        }
+        vegaEmbed('#chart5', chartFive);
+
+        chartSix = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+            "title": "Mean child mortality Against mean life expectancy in Russia over time",
+            "width": 1100,
+            "height": 300,
+            "data": {
+                "url": "https://raw.githubusercontent.com/abazena/Lab-CW-2/main/data/gapminder.csv",
+                "format": { "type": "dsv", "delimiter": ";" }
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "timeUnit": "year",
+                    "type": "ordinal"
+                }
+            },
+            "layer": [{
+                    "mark": { "color": "#d33636", "type": "line" },
+                    "encoding": {
+                        "y": {
+                            "field": "child_mortality",
+                            "aggregate": "mean",
+                            "type": "quantitative",
+                            "title": "Mean of Child Mortality (Red)"
+                        }
+                    }
+                },
+                {
+                    "mark": { "stroke": "#176434", "type": "line" },
+                    "encoding": {
+                        "y": {
+                            "field": "life",
+                            "aggregate": "mean",
+                            "type": "quantitative",
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Life expectancy (Green)"
+                        }
+                    }
+                }
+            ],
+
+            // "transform": [{ "filter": { "field": "Country", "equal": "Russia" } }],
+            "resolve": { "scale": { "y": "independent" } }
+        }
+        vegaEmbed('#chart6', chartSix);
     },
     initDashboardTwo: function() {
         chartOne = {
