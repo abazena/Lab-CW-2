@@ -178,7 +178,7 @@ const dashboard = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "width": 500,
             "height": 450,
-            "title": "Mean child mortality Against mean fertility over time",
+            "title": "Mean fertility Against mean gdp over time",
             "data": {
                 "url": "https://raw.githubusercontent.com/abazena/Lab-CW-2/main/data/gapminder.csv",
                 "format": { "type": "dsv", "delimiter": ";" }
@@ -191,7 +191,7 @@ const dashboard = {
                             "field": "fertility",
                             "aggregate": "mean",
                             "type": "quantitative",
-                            "title": "Mean of Child Mortality (Red)"
+                            "title": "Mean of Fertility (Red)"
                         }
                     }
                 },
@@ -203,7 +203,7 @@ const dashboard = {
                             "aggregate": "mean",
                             "type": "quantitative",
                             "axis": { "titleColor": "#000000" },
-                            "title": "Mean of Fertility (Green)"
+                            "title": "Mean of GDP (Green)"
                         }
                     }
                 }
@@ -214,9 +214,9 @@ const dashboard = {
 
         chartSix = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "Mean child mortality Against mean life expectancy in Russia over time",
-            "width": 1100,
-            "height": 300,
+            "title": "Mean child mortality Against mean life expectancy over time",
+            "width": 500,
+            "height": 450,
             "data": {
                 "url": "https://raw.githubusercontent.com/abazena/Lab-CW-2/main/data/gapminder.csv",
                 "format": { "type": "dsv", "delimiter": ";" }
