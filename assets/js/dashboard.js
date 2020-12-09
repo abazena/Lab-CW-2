@@ -33,7 +33,8 @@ const dashboard = {
                         "y": {
                             "field": "child_mortality",
                             "aggregate": "mean",
-                            "type": "quantitative"
+                            "type": "quantitative",
+                            "title": "Mean of Child Mortality (Red)"
                         }
                     }
                 },
@@ -44,7 +45,8 @@ const dashboard = {
                             "field": "life",
                             "aggregate": "mean",
                             "type": "quantitative",
-                            "axis": { "titleColor": "#000000" }
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Life expectancy (Green)"
                         }
                     }
                 }
@@ -70,7 +72,8 @@ const dashboard = {
                         "y": {
                             "field": "child_mortality",
                             "aggregate": "mean",
-                            "type": "quantitative"
+                            "type": "quantitative",
+                            "title": "Mean of Child Mortality (Red)"
                         }
                     }
                 },
@@ -82,7 +85,8 @@ const dashboard = {
                             "aggregate": "mean",
                             "type": "quantitative",
                             "scale": { "domain": [0, 6] },
-                            "axis": { "titleColor": "#000000" }
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Fertility (Green)"
                         }
                     }
                 }
@@ -102,23 +106,25 @@ const dashboard = {
             },
             "encoding": { "x": { "field": "Year", "timeUnit": "year", "type": "ordinal" } },
             "layer": [{
-                    "mark": { "color": "#d33636", "type": "bar", "cornerRadiusEnd": 1 },
+                    "mark": { "color": "#176434", "type": "bar", "cornerRadiusEnd": 1 },
                     "encoding": {
                         "y": {
                             "field": "fertility",
                             "aggregate": "mean",
-                            "type": "quantitative"
+                            "type": "quantitative",
+                            "title": "Mean of Fertility (Green)"
                         }
                     }
                 },
                 {
-                    "mark": { "stroke": "#176434", "type": "line" },
+                    "mark": { "stroke": "#ecc616", "type": "line" },
                     "encoding": {
                         "y": {
                             "field": "population",
                             "aggregate": "mean",
                             "type": "quantitative",
-                            "axis": { "titleColor": "#000000" }
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Population (Yellow)"
                         }
                     }
                 }
@@ -140,23 +146,25 @@ const dashboard = {
             },
             "encoding": { "x": { "field": "Year", "timeUnit": "year", "type": "ordinal" } },
             "layer": [{
-                    "mark": { "color": "#d33636", "type": "bar", "cornerRadiusEnd": 1 },
+                    "mark": { "color": "#176434", "type": "bar", "cornerRadiusEnd": 1 },
                     "encoding": {
                         "y": {
                             "field": "life",
                             "aggregate": "mean",
-                            "type": "quantitative"
+                            "type": "quantitative",
+                            "title": "Mean of Life Expectancy (Green)"
                         }
                     }
                 },
                 {
-                    "mark": { "stroke": "#176434", "type": "line" },
+                    "mark": { "stroke": "#ecc616", "type": "line" },
                     "encoding": {
                         "y": {
                             "field": "population",
                             "aggregate": "mean",
                             "type": "quantitative",
-                            "axis": { "titleColor": "#000000" }
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Population (Yellow)"
                         }
                     }
                 }
@@ -178,25 +186,27 @@ const dashboard = {
             },
             "encoding": { "x": { "field": "Year", "timeUnit": "year", "type": "ordinal" } },
             "layer": [{
-                    "mark": { "color": "#d33636", "type": "bar", "cornerRadiusEnd": 4 },
+                    "mark": { "color": "#176434", "type": "bar", "cornerRadiusEnd": 4 },
                     "encoding": {
                         "y": {
                             "field": "child_mortality",
                             "aggregate": "mean",
                             "type": "quantitative",
-                            "scale": { "domain": [0, 120] }
+                            "scale": { "domain": [0, 120] },
+                            "title": "Mean of Child Mortality (Green)"
                         }
                     }
                 },
                 {
-                    "mark": { "stroke": "#176434", "type": "line" },
+                    "mark": { "stroke": "#ecc616", "type": "line" },
                     "encoding": {
                         "y": {
                             "field": "fertility",
                             "aggregate": "mean",
                             "type": "quantitative",
                             "scale": { "domain": [0, 6] },
-                            "axis": { "titleColor": "#000000" }
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Fertility (Yellow)"
                         }
                     }
                 }
@@ -209,7 +219,7 @@ const dashboard = {
 
         chartTwo = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "Mean child mortality Against mean life in Russia over time",
+            "title": "Mean child mortality Against mean life expectancy in Russia over time",
             "width": 1100,
             "height": 300,
             "data": {
@@ -229,7 +239,8 @@ const dashboard = {
                         "y": {
                             "field": "child_mortality",
                             "aggregate": "mean",
-                            "type": "quantitative"
+                            "type": "quantitative",
+                            "title": "Mean of Child Mortality (Red)"
                         }
                     }
                 },
@@ -240,7 +251,8 @@ const dashboard = {
                             "field": "life",
                             "aggregate": "mean",
                             "type": "quantitative",
-                            "axis": { "titleColor": "#000000" }
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Life expectancy (Green)"
                         }
                     }
                 }
@@ -255,7 +267,7 @@ const dashboard = {
 
         chartThree = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "Mean child mortality Against mean fertility in America over time",
+            "title": "Mean of fertility Against mean Gdp in the Middle East & North Africa region over time",
             "width": 500,
             "height": 450,
             "data": {
@@ -264,23 +276,25 @@ const dashboard = {
             },
             "encoding": { "x": { "field": "Year", "timeUnit": "year", "type": "ordinal" } },
             "layer": [{
-                    "mark": { "color": "#d33636", "type": "bar", "cornerRadiusEnd": 1 },
+                    "mark": { "color": "#176434", "type": "bar", "cornerRadiusEnd": 1 },
                     "encoding": {
                         "y": {
                             "field": "fertility",
                             "aggregate": "mean",
-                            "type": "quantitative"
+                            "type": "quantitative",
+                            "title": "Mean of Fertility (Green)"
                         }
                     }
                 },
                 {
-                    "mark": { "stroke": "#176434", "type": "line" },
+                    "mark": { "stroke": "#ecc616", "type": "line" },
                     "encoding": {
                         "y": {
                             "field": "gdp",
                             "aggregate": "mean",
                             "type": "quantitative",
-                            "axis": { "titleColor": "#000000" }
+                            "axis": { "titleColor": "#000000" },
+                            "title": "Mean of Gdp (Yellow)"
                         }
                     }
                 }
