@@ -1,4 +1,4 @@
-let cr = ["green", "green", "green","green", "green", "green","green", "green", "green","green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green","green" , "green","green", "green", "green","green", "green", "green","green", "green", "green","green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green","red" , "green"]
+let cr = ["green", "green", "green","green", "green", "green","green", "green", "green","green", "green", "green", "green", "green", "green", "green", /*spike*/ "green", "green", "green", "green", "green", "green","green" , "green","green", "green", "green","green", "green", "green","green", "green", "green","green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green", "green","red" , "green"]
 
 var _DATA = null;
 $('#sidebarCollapse').on('click', function() {
@@ -229,7 +229,7 @@ const dashboard = {
             },
             "layer": [
               {
-                "mark": {"color": "#176434", "type": "bar", "cornerRadiusEnd": 4},
+                "mark": {"color": "#176434", "type": "bar", "cornerRadiusEnd": 1},
                 "encoding": {
                   "y": {
                     "field": "child_mortality",
