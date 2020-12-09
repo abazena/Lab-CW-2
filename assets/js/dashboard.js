@@ -176,7 +176,7 @@ const dashboard = {
 
         chartFive = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "width": 500,
+            "width": 1000,
             "height": 450,
             "title": "Mean fertility Against mean gdp over time",
             "data": {
@@ -211,52 +211,6 @@ const dashboard = {
             "resolve": { "scale": { "y": "independent" } }
         }
         vegaEmbed('#chart5', chartFive);
-
-        chartSix = {
-            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "Mean child mortality Against mean life expectancy over time",
-            "width": 500,
-            "height": 450,
-            "data": {
-                "url": "https://raw.githubusercontent.com/abazena/Lab-CW-2/main/data/gapminder.csv",
-                "format": { "type": "dsv", "delimiter": ";" }
-            },
-            "encoding": {
-                "x": {
-                    "field": "Year",
-                    "timeUnit": "year",
-                    "type": "ordinal"
-                }
-            },
-            "layer": [{
-                    "mark": { "color": "#d33636", "type": "line" },
-                    "encoding": {
-                        "y": {
-                            "field": "child_mortality",
-                            "aggregate": "mean",
-                            "type": "quantitative",
-                            "title": "Mean of Child Mortality (Red)"
-                        }
-                    }
-                },
-                {
-                    "mark": { "stroke": "#176434", "type": "line" },
-                    "encoding": {
-                        "y": {
-                            "field": "life",
-                            "aggregate": "mean",
-                            "type": "quantitative",
-                            "axis": { "titleColor": "#000000" },
-                            "title": "Mean of Life expectancy (Green)"
-                        }
-                    }
-                }
-            ],
-
-            // "transform": [{ "filter": { "field": "Country", "equal": "Russia" } }],
-            "resolve": { "scale": { "y": "independent" } }
-        }
-        vegaEmbed('#chart6', chartSix);
     },
     initDashboardTwo: function() {
         chartOne = {
